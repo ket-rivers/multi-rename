@@ -30,6 +30,8 @@ Dir["*"].each do |file|
   elsif user_option == "f"
     new_name = File.basename(file).sub(find_pattern, replace_pattern)
   else
+    # TO DO: resolve the case when user imputs a wrong option.
+    # Something like GO TO LINE 20 and start over (wait for another input)
     puts "Wrong option. Try again."
   end
   File.rename( file, "#{new_name}" )
